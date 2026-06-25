@@ -1,0 +1,18 @@
+#!/usr/bin/env -S guile --no-auto-compile -s
+!#
+
+;; no autocompile needed for my dynamic require system
+
+;; bootstrap require
+(load (in-vicinity (dirname (current-filename)) "framework-src/require.scm"))
+
+;; require default modules
+(require "framework-src/html.scm")
+
+(define args (cdr (command-line)))
+
+(unless (= (length args) 1)
+  (display "USAGE: framework file.scm\n" (current-error-port))
+  (exit 2))
+
+(load (car args))
