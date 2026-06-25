@@ -8,6 +8,7 @@
 
 ;; require default modules
 (require "framework-src/html.scm")
+(require "framework-src/component.scm")
 
 (define args (cdr (command-line)))
 
