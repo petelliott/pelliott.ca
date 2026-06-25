@@ -29,9 +29,8 @@
 
 (define-syntax attribute-list
   (syntax-rules ()
-    ((_ ()) '())
-    ((_ ((k v) . rest))
-     (cons (cons (quote k) v) (attribute-list rest)))))
+    ((_ ((k v) ...))
+     (list (cons (quote k) v) ...))))
 
 (define-syntax element
   (syntax-rules ()
@@ -53,9 +52,8 @@
 
 (define-syntax define-elements
   (syntax-rules ()
-    ((_) '())
-    ((_ (name tagname) . rest)
-     (begin (define-element name tagname) (define-elements . rest)))))
+    ((_ (name tagname) ...)
+     (begin (define-element name tagname) ...))))
 
 (define-syntax void-element
   (syntax-rules ()
@@ -74,9 +72,8 @@
 
 (define-syntax define-void-elements
   (syntax-rules ()
-    ((_) '())
-    ((_ (name tagname) . rest)
-     (begin (define-void-element name tagname) (define-void-elements . rest)))))
+    ((_ (name tagname) ...)
+     (begin (define-void-element name tagname) ...))))
 
 (define-void-elements
    (<area> area) (<base> base) (<br> br) (<col> col) (<embed> embed) (<hr> hr)
