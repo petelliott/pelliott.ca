@@ -7,7 +7,7 @@
 (define (build-file src dst)
   (with-output-to-file dst
     (lambda ()
-      (load src))))
+      (load (canonicalize-path src)))))
 
 (define (build src dest)
   (system* "rm" "-rf" dest)
@@ -24,6 +24,7 @@
                 (build-file filename (in-vicinity dest (basename filename ".scm")))
                 (copy-file filename
                            (in-vicinity dest rel))))
+           ((symlink) #f)
            (else
-            (error "unknown ftw flag " flag)))
+            (error "unknown ftw flag" flag filename)))
          #t)))
