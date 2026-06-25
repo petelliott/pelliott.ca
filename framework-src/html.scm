@@ -110,8 +110,9 @@
   (display ">")
   (newline))
 
-(write (current-filename))
-
-;(define args (cdr (command-line)))
-;(if (null? args)
-(newline)
+(define (: . args)
+  (for-each
+   (lambda (arg)
+     (display arg)
+     (newline))
+   args))

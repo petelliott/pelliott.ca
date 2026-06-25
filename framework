@@ -9,11 +9,38 @@
 ;; require default modules
 (require "framework-src/html.scm")
 (require "framework-src/component.scm")
+(require "framework-src/build.scm")
+
+
+(define (invalid-args . msg)
+  (define m (if (null? msg)
+                "USAGE: framework <build|run> [options]"
+                (car msg)))
+  (display m (current-error-port))
+  (newline (current-error-port))
+  (exit 2))
+
+(define (run-cmd args)
+  (unless (= (length args) 1)
+    (invalid-args "USAGE: framework run file.scm"))
+  (load (car args)))
+
+(define (build-cmd args)
+  (unless (= (length args) 2)
+    (invalid-args "USAGE: framework build src/ dst/"))
+  (build (car args) (cadr args)))
+
+;; start running
 
 (define args (cdr (command-line)))
 
-(unless (= (length args) 1)
-  (display "USAGE: framework file.scm\n" (current-error-port))
-  (exit 2))
+(unless (>= (length args) 1)
+  (invalid-args))
 
-(load (car args))
+(cond
+  ((string=? (car args) "build")
+   (build-cmd (cdr args)))
+  ((string=? (car args) "run")
+    (run-cmd (cdr args)))
+  (else
+   (invalid-args)))
