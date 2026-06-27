@@ -24,5 +24,22 @@
                               <select> <slot> <small> <span> <strong> <style>
                               <sub> <summary> <sup> <table> <tbody> <td>
                               <template> <textarea> <tfoot> <th> <thead> <time>
-                              <title> <tr> <u> <ul> <var> <video>))
+                              <title> <tr> <u> <ul> <var> <video>
+                              ;; svg elements (shared a/script/style/title
+                              ;; already listed above)
+                              <svg> <g> <defs> <symbol> <use> <image> <switch>
+                              <foreignObject> <view> <desc> <metadata> <path>
+                              <rect> <circle> <ellipse> <line> <polyline>
+                              <polygon> <text> <tspan> <textPath> <marker>
+                              <linearGradient> <radialGradient> <stop> <pattern>
+                              <clipPath> <mask> <filter> <feBlend> <feColorMatrix>
+                              <feComponentTransfer> <feComposite>
+                              <feConvolveMatrix> <feDiffuseLighting>
+                              <feDisplacementMap> <feDistantLight> <feDropShadow>
+                              <feFlood> <feFuncA> <feFuncB> <feFuncG> <feFuncR>
+                              <feGaussianBlur> <feImage> <feMerge> <feMergeNode>
+                              <feMorphology> <feOffset> <fePointLight>
+                              <feSpecularLighting> <feSpotLight> <feTile>
+                              <feTurbulence> <animate> <animateMotion>
+                              <animateTransform> <set> <mpath>))
                  (put sym 'scheme-indent-function 1)))))))
