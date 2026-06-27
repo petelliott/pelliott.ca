@@ -10,6 +10,7 @@
 (require "framework-src/html.scm")
 (require "framework-src/component.scm")
 (require "framework-src/build.scm")
+(require "framework-src/util.scm")
 
 
 (define (invalid-args . msg)
