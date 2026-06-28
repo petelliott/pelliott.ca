@@ -113,6 +113,5 @@
 (define (: . args)
   (for-each
    (lambda (arg)
-     (display arg)
-     (newline))
+     (display arg))
    args))
