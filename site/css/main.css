@@ -1,0 +1,107 @@
+@import "color.css";
+@import "/fonts/crimson-pro/font.css";
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main, .main-header {
+    margin-inline: auto;
+    padding: 0 1rem;
+    max-width: 50rem;
+}
+
+main {
+    flex: 1;
+}
+
+
+/* main header */
+
+.main-header {
+    padding-top: 1rem;
+    width: 100%;
+
+    font-family: 'Crimson Pro';
+    color: var(--accent);
+
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    padding-bottom: 0;
+}
+
+.main-header::after {
+    content: "";
+    width: 100%;
+    border-bottom: .25rem solid var(--accent);
+}
+
+.main-header h1 {
+    margin-block: 0;
+}
+
+.main-header h1 a {
+    display: flex;
+    align-items: baseline;
+    color: inherit;
+    font-weight: 900;
+    text-decoration: none;
+    margin: 0;
+}
+
+.tinyca {
+    display: flex;
+    font-size: .7em;
+}
+
+.main-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem 1rem;
+}
+
+.main-header nav a {
+    display: flex;
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: 900;
+}
+
+.main-header nav a:hover {
+    text-decoration: underline;
+}
+
+/* footer */
+
+.main-footer {
+    background-color: var(--accent-bg);
+    color: var(--bg);
+    text-align: center;
+    /*padding: 1rem;*/
+}
+
+.main-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+
+    margin-block: 1em;
+}
+
+.main-footer a {
+    color: var(--bg);
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+}
