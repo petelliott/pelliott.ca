@@ -12,6 +12,7 @@ main, .main-header {
     margin-inline: auto;
     padding: 0 1rem;
     max-width: 50rem;
+    width: 100%;
 }
 
 main {
