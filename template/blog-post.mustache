@@ -1,0 +1,17 @@
+{{<page}}
+    {{$head}}
+    <link rel="stylesheet" href="/css/blog-post.css">
+    {{/head}}
+    {{$body}}
+    <article>
+      <header>
+        <h1>{{title}}</h1>
+        <p>
+        &lt;<a href={{authorurl}}>{{author}}</a>&gt;
+        {{date}}
+        </p>
+      </header>
+      {{{content}}}
+    </article>
+    {{/body}}
+{{/page}}

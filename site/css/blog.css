@@ -1,0 +1,22 @@
+
+.blog-post-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.blog-post-list .post-title, .blog-post-list p {
+    margin: 0;
+}
+
+.blog-post-list a {
+    text-decoration: none;
+}
+
+.blog-post-list .post-description {
+    margin-bottom: .25rem;
+}
+
+.blog-post-list article {
+    margin-block: 1rem;
+}

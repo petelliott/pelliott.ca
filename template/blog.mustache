@@ -1,0 +1,23 @@
+{{<page}}
+    {{$head}}
+    <link rel="stylesheet" href="/css/blog.css">
+    {{/head}}
+    {{$body}}
+    <ul class="blog-post-list">
+      {{#posts}}
+      <li>
+        <article>
+          <h3 class="post-title"><a href="{{url}}">{{title}}</a></h3>
+          <p class="post-description">
+            {{description}}
+          </p>
+          <p class="post-meta">
+            {{date}} | <a href={{authorurl}}>{{author}}</a> |
+             #tag1 #tag2
+          </p>
+        </article>
+      </li>
+      {{/posts}}
+    </ul>
+    {{/body}}
+{{/page}}

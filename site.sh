@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-schng $@ -i template/ site/ -o build/
+schng $@ -i template/ -i data/ site/ -o build/
