@@ -1,6 +1,7 @@
 (use-modules (schingle template mustache)
              (schingle load)
              (schingle ftypes)
+             (schingle render)
              (srfi srfi-43)
              (ice-9 ftw)
              (ice-9 regex)
@@ -13,21 +14,16 @@
   (basename path (full-file-extension path)))
 
 (define blog-post-template (mustache-compile "blog-post.mustache"))
-(define (meta-and-content url path)
-  (call-with-input-file path
-    (lambda (port)
-      (define meta (read port))
-      (define post (get-string-all port))
-      (GET-static url (content '(text/html)
-                               (blog-post-template (acons 'content post meta))))
-      (acons 'url url meta))))
 
 (define (serve-post path)
   (define url (string-append "/blog/" (slug path)))
-  (if (file-is-directory? path)
-      (begin
-        (meta-and-content url (in-vicinity path "index.md")))
-      (meta-and-content url path)))
+  (call-with-input-file path
+    (lambda (port)
+      (define meta (read port))
+      (define post (render-content (get-string-all port) path))
+      (GET-static url (content '(text/html)
+                               (blog-post-template (acons 'content post meta))))
+      (acons 'url url meta))))
 
 (define posts
   (stable-sort

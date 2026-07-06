@@ -5,4 +5,8 @@
  (description . "I'm testing out my blogging platform")
  (tags . #(testing schingle)))
 
-hooray, looks like my blog is working
+lets test some markdown in this post
+
+## h2
+
+**bold** and *italic*
