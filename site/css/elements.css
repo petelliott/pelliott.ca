@@ -70,3 +70,11 @@ a {
 a:visited {
     color: var(--link-visited);
 }
+
+.underline-hover a {
+    text-decoration: none;
+}
+
+.underline-hover a:hover {
+    text-decoration: underline;
+}

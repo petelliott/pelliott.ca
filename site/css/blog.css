@@ -9,14 +9,31 @@
     margin: 0;
 }
 
-.blog-post-list a {
-    text-decoration: none;
-}
-
 .blog-post-list .post-description {
-    margin-bottom: .25rem;
+    margin-block: .25rem;
 }
 
 .blog-post-list article {
     margin-block: 1rem;
+}
+
+.blog-post-list .info > ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog-post-list .info > ul > li:not(:last-child)::after {
+  content: "|" / "";
+  margin-inline: 0.5rem;
+  color: var(--faint);
+}
+
+.alltags {
+    margin-block: 1rem;
+    display: flex;
+    gap: 0 0.5em;
+    flex-wrap: wrap;
 }

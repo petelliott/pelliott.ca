@@ -1,8 +1,8 @@
 ((title . "My First Blog Post")
  (author . "Peter Elliott")
- (authorurl . "/")
- (date . "2026-07-03T12:20-06:00")
+ (author-url . "/")
+ (date . "2026-07-03")
  (description . "I'm testing out my blogging platform")
- (tags testing schingle etc))
+ (tags . #(testing schingle)))
 
 hooray, looks like my blog is working

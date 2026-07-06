@@ -1,20 +1,33 @@
 {{<page}}
     {{$head}}
     <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/tags-list.css">
     {{/head}}
     {{$body}}
     <ul class="blog-post-list">
+      {{#selected-tag}}
+      <h4>posts about #{{.}}</h4>
+      {{/selected-tag}}
+      {{#show-tags}}
+      <nav class="alltags underline-hover">
+        {{>tags-list}}
+        <a href="/blog/tags" aria-label="more tags">...</a>
+      </nav>
+      {{/show-tags}}
       {{#posts}}
       <li>
-        <article>
+        <article class="underline-hover">
           <h3 class="post-title"><a href="{{url}}">{{title}}</a></h3>
           <p class="post-description">
             {{description}}
           </p>
-          <p class="post-meta">
-            {{date}} | <a href={{authorurl}}>{{author}}</a> |
-             #tag1 #tag2
-          </p>
+          <nav class="info">
+            <ul>
+                <li>{{date}}</li>
+                <li><a href={{author-url}}>{{author}}</a></li>
+                <li>{{>tags-list}}</li>
+            </ul>
+          </nav>
         </article>
       </li>
       {{/posts}}

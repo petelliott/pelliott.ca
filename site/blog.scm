@@ -1,25 +1,16 @@
 (use-modules (schingle template mustache)
              (schingle load)
              (schingle ftypes)
+             (srfi srfi-43)
              (ice-9 ftw)
              (ice-9 regex)
-             (ice-9 textual-ports))
+             (ice-9 textual-ports)
+             (parameters))
 
 (define blog-dir (schingle-resolve-path "blog/"))
 
 (define (slug path)
   (basename path (full-file-extension path)))
-
-(define (meta-for-render meta)
-  (map (lambda (kv)
-         (case (car kv)
-           ((date)
-            (cons (car kv)
-                  (match:prefix (string-match "T" (cdr kv)))))
-           (else
-            kv)))
-       meta))
-
 
 (define blog-post-template (mustache-compile "blog-post.mustache"))
 (define (meta-and-content url path)
@@ -28,7 +19,7 @@
       (define meta (read port))
       (define post (get-string-all port))
       (GET-static url (content '(text/html)
-                               (blog-post-template (acons 'content post (meta-for-render meta)))))
+                               (blog-post-template (acons 'content post meta))))
       (acons 'url url meta))))
 
 (define (serve-post path)
@@ -47,14 +38,47 @@
      (string>? (assoc-ref a 'date)
                (assoc-ref b 'date)))))
 
+(define (count-tags posts)
+  (define table (make-hash-table))
+  (for-each
+   (lambda (post)
+     (vector-for-each
+      (lambda (i tag)
+        (hashq-set! table tag (1+ (hashq-ref table tag 0))))
+      (assoc-ref post 'tags)))
+   posts)
+  (stable-sort (hash-map->list cons table)
+               (lambda (a b)
+                 (if (= (cdr a) (cdr b))
+                     (string< (symbol->string (car a))
+                              (symbol->string (car b)))
+                     (> (cdr a) (cdr b))))))
 
-(write posts)
-(newline)
+(define tags (count-tags posts))
+(define tag-data (map (lambda (pair) `((tag . ,(car pair)) (count . ,(cdr pair)))) tags))
 
-(define posts-for-render
-  (map meta-for-render posts))
+(add-global-template-parameter 'blog `((posts . ,(list->vector posts))
+                                       (tags . ,(list->vector tag-data))))
+
 
 (define blog-template (mustache-compile "blog.mustache"))
 (GET-static "/blog"
             (content '(text/html)
-                     (blog-template `((posts . ,(list->vector posts-for-render))))))
+                     (blog-template `((show-tags . #t)
+                                      (tags . ,(list->vector (map car tags)))
+                                      (posts . ,(list->vector posts))))))
+
+(define (make-tag-pages tags posts)
+  (for-each
+   (lambda (tag)
+     (define filtered (filter (lambda (post)
+                                (vector-any (lambda (t) (eq? t tag)) (assoc-ref post 'tags)))
+                              posts))
+
+     (GET-static (string-append "/blog/tags/" (symbol->string tag))
+                 (content '(text/html)
+                          (blog-template `((selected-tag . ,tag)
+                                           (posts . ,(list->vector filtered)))))))
+   tags))
+
+(make-tag-pages (map car tags) posts)

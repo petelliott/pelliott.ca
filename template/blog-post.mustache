@@ -1,15 +1,16 @@
 {{<page}}
     {{$head}}
     <link rel="stylesheet" href="/css/blog-post.css">
+    <link rel="stylesheet" href="/css/tags-list.css">
     {{/head}}
     {{$body}}
-    <article>
-      <header>
+    <article class="blog-post">
+      <header class="underline-hover">
         <h1>{{title}}</h1>
         <p>
-        &lt;<a href={{authorurl}}>{{author}}</a>&gt;
-        {{date}}
+          by <a href={{author-url}}>{{author}}</a>, {{date}}
         </p>
+        {{>tags-list}}
       </header>
       {{{content}}}
     </article>

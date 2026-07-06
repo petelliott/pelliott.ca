@@ -1,0 +1,25 @@
+{{<page}}
+    {{$head}}
+    <style>
+      .tags-list-page {
+          list-style-type: none;
+          padding-left: 0;
+          width: fit-content;
+      }
+
+      .tags-list-page li {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+          justify-content: space-between;
+      }
+    </style>
+    {{/head}}
+    {{$body}}
+    <ul class="tags-list-page underline-hover">
+      {{#blog.tags}}
+      <li><a href="/blog/tags/{{tag}}">{{tag}}</a><span class="count">{{count}}</span></li>
+      {{/blog.tags}}
+    </ul>
+    {{/body}}
+{{/page}}

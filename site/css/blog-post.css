@@ -1,0 +1,10 @@
+.blog-post header p, .blog-post header h1 {
+    margin:0.125rem;
+}
+.blog-post header {
+    margin-block: 1rem;
+}
+
+.blog-post .tags-list {
+    margin-top: 0.5rem;
+}
