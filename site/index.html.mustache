@@ -21,9 +21,9 @@
     <section>
       <h2>blog</h2>
       <ul>
-        {{#blog.posts}}
+        {{#blog.top10}}
         <li>{{date}} <a href="{{url}}">{{title}}</a></li>
-        {{/blog.posts}}
+        {{/blog.top10}}
         <li><a href="/blog" aria-label="more blog posts">...</a></li>
       </ul>
     </section>
@@ -40,6 +40,9 @@
     <section>
       <h2>changelog</h2>
       <ul>
+        {{#changelog.top10}}
+        <li>{{date}} &ndash; {{text}}</li>
+        {{/changelog.top10}}
         <li><a href="/changelog" aria-label="full changelog">...</a></li>
       </ul>
     </section>

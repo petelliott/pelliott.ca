@@ -1,0 +1,13 @@
+{{<page}}
+    {{$head}}
+    <style>
+    </style>
+    {{/head}}
+    {{$body}}
+    <ul>
+      {{#changelog.all}}
+      <li>{{date}} &ndash; {{text}}</li>
+      {{/changelog.all}}
+    </ul>
+    {{/body}}
+{{/page}}
