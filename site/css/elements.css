@@ -82,3 +82,8 @@ a:visited {
 .nowrap {
     white-space: nowrap;
 }
+
+::selection {
+    background-color: var(--accent-bg);
+    color: var(--bg);
+}
