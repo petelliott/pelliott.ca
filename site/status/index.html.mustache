@@ -1,0 +1,25 @@
+{{<page}}
+    {{$head}}
+    <style>
+      .currently {
+          margin-bottom: -.5em;
+      }
+      .asof {
+          margin-top: -.5em;
+      }
+    </style>
+    {{/head}}
+    {{$body}}
+    {{#status.current}}
+    <h3 class="currently">currently, i&apos;m</h3>
+    <h1>{{text}}</h1>
+    <p class="asof">as of {{date}}</p>
+    {{/status.current}}
+    <h3>but previously i&apos;ve been</h3>
+    <ul>
+      {{#status.old}}
+      <li>{{date}} &mdash; {{text}}</li>
+      {{/status.old}}
+    </ul>
+    {{/body}}
+{{/page}}
