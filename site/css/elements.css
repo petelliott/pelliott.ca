@@ -78,3 +78,7 @@ a:visited {
 .underline-hover a:hover {
     text-decoration: underline;
 }
+
+.nowrap {
+    white-space: nowrap;
+}

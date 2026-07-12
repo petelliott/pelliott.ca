@@ -1,14 +1,60 @@
 {{<page}}
+    {{$head}}
+    <style>
+      ul {
+          list-style-type: none;
+          padding-left: 0;
+          margin-block: 0;
+      }
+      section {
+        margin-block: .75rem;
+      }
+    </style>
+    {{/head}}
     {{$body}}
-    <h1>lorem ipsum</h1>
-    by peter elliott <a href="http://example.com">test</a>
-    <h2>Lorem Ipsum</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <h3>Lorem Ipsum</h3>
-    <h4>Lorem Ipsum</h4>
-    <h5>Lorem Ipsum</h5>
-    <h6>Lorem Ipsum</h6>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h1>hello!</h1>
+    <p>
+      i&apos;m a canadian software engineer. i like programming, rollerblading,
+      bikes, crafts, and <a class="nowrap" href="/inetrests">other things</a>
+    </p>
+    <p><a href="/statuses"><b>i&apos;m currently</b>:</a> working on my website.</p>
+    <!--
+    <section>
+    <h2>Status <span class="date">2026-07-06</span></h2>
+    <ul>
+      <li><b>Programming:</b> My website</li>
+      <li><b>Reading:</b> Kafka on the Shore</li>
+      <li><b>Crafting:</b> nothing right now :(</li>
+      <li><b>Obsessed with:</b> My Website</li>
+      <li><b>this week I&apos;m:</b> enjoying the sunshine. hopefully climbing
+      on saturday</li>
+    </ul>
+    </section>
+    -->
+    <section>
+      <h2>blog</h2>
+      <ul>
+        {{#blog.posts}}
+        <li>{{date}} <a href="{{url}}">{{title}}</a></li>
+        {{/blog.posts}}
+        <li><a href="/blog" aria-label="more blog posts">...</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>projects</h2>
+      <ul>
+        <li><a href="https://github.com/petelliott/petix2"><b>petix2</b></a>: my clone of <a href="https://en.wikipedia.org/wiki/Research_Unix">research unix</a>, with virtual memory and a virtual filesystem.</li>
+        <li><a href="https://github.com/petelliott/pscheme"><b>pscheme</b></a>: self-hosted r7rs scheme compiler.</li>
+        <li><a href="https://github.com/petelliott/pbasic"><b>pbasic</b></a>: a 4k (code, stack and heap) basic for modern amd64 linux.</li>
+        <li><a href="https://github.com/petelliott/schingle"><b>schingle</b></a>: a guile web framework/static site generator (used by this site!).</li>
+        <li><a href="/projects" aria-label="more projects">...</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>changelog</h2>
+      <ul>
+        <li><a href="/changelog" aria-label="full changelog">...</a></li>
+      </ul>
+    </section>
     {{/body}}
 {{/page}}

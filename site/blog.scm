@@ -53,8 +53,10 @@
 (define tags (count-tags posts))
 (define tag-data (map (lambda (pair) `((tag . ,(car pair)) (count . ,(cdr pair)))) tags))
 
+
 (add-global-template-parameter 'blog `((posts . ,(list->vector posts))
-                                       (tags . ,(list->vector tag-data))))
+                                       (tags . ,(list->vector tag-data))
+                                       (last-10-posts . ,(list->vector (list-head posts (min (length posts) 10))))))
 
 
 (define blog-template (mustache-compile "blog.mustache"))
