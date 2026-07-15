@@ -6,6 +6,7 @@
              (ice-9 ftw)
              (ice-9 regex)
              (ice-9 textual-ports)
+             (renderers)
              (parameters)
              (pagination))
 
