@@ -8,7 +8,7 @@
 (define pandoc-command "")
 
 (define (markdown->html content)
-  (define-values (in out pids) (pipeline '(("pandoc" "-f" "markdown" "-t" "html"))))
+  (define-values (in out pids) (pipeline '(("pandoc" "-f" "markdown-smart" "-t" "html"))))
   (display content out)
   (close-port out)
   (define html (get-string-all in))
