@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - run: sudo apt install -y guile-3.0 guile-json pandoc
+      - run: sudo apt-get install -y guile-3.0 guile-json pandoc
       - name: clone schingle
         uses: actions/checkout@v4
         with:
@@ -32,6 +32,7 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - run: echo $PATH
       - run: ./site.sh static -o build/
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
