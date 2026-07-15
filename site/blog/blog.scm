@@ -58,6 +58,9 @@
                                        (tags . ,(list->vector tag-data))
                                        (last-10-posts . ,(list->vector (list-head posts (min (length posts) 10))))))
 
+(write (*global-template-params*))
+(newline)
+
 
 (define blog-template (mustache-compile "blog.mustache"))
 (GET-static "/blog"
