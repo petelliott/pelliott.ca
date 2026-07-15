@@ -28,7 +28,7 @@ jobs:
         with:
           repository: 'petelliott/schingle'
           path: 'schingle'
-      - run: echo $(realpath ./schingle/schng) >> $GITHUB_PATH
+      - run: echo $(realpath ./schingle) >> $GITHUB_PATH
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
