@@ -1,4 +1,4 @@
-last updated: 2026-06-12
+last updated: 2026-07-15
 
 ## i'm programming
 
@@ -17,4 +17,4 @@ rollerblading as i would like due to injury and weather.
 
 ## i'm reading
 
-[kafka on the shore](https://en.wikipedia.org/wiki/Kafka_on_the_Shore) very slowly.
+[kafka on the shore](https://en.wikipedia.org/wiki/Kafka_on_the_Shore), very slowly.
