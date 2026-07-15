@@ -1,3 +1,5 @@
+((title . "sitemap"))
+
 ## boring regular stuff
 
 - [now](/now)

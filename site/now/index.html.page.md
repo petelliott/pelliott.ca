@@ -1,3 +1,5 @@
+((title . "now"))
+
 last updated: 2026-07-15
 
 ## i'm programming

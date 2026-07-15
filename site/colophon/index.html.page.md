@@ -1,3 +1,5 @@
+((title . "colophon"))
+
 # colophon
 
 this website was launched in 2026. you can read the source code

@@ -2,6 +2,7 @@
   #:use-module (schingle template mustache)
   #:use-module (schingle render)
   #:use-module (schingle util)
+  #:use-module (ice-9 textual-ports)
   #:use-module (markdown)
   #:use-module (parameters))
 
@@ -10,4 +11,12 @@
 
 (define md-template (mustache-compile "mdpage.mustache"))
 (add-renderer ".page.md" (lambda (content)
-                           (md-template `((body . ,(markdown->html (string/bytevector->string content)))))))
+                           (define str (string/bytevector->string content))
+                           (define-values (frontmatter body)
+                             (call-with-input-string str
+                               (lambda (port)
+                                 (define frontmatter (read port))
+                                 (if (list? frontmatter)
+                                     (values frontmatter (get-string-all port))
+                                     (values '() str)))))
+                           (md-template (append frontmatter `((body . ,(markdown->html body)))))))

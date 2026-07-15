@@ -1,4 +1,12 @@
 {{<page}}
+    {{$title}}
+        {{#title}}
+            {{.}} [pelliott.ca]
+        {{/title}}
+        {{^title}}
+            pelliott.ca
+        {{/title}}
+    {{/title}}
     {{$body}}
     {{{body}}}
     {{/body}}
