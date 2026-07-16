@@ -87,3 +87,9 @@ a:visited {
     background-color: var(--accent-bg);
     color: var(--bg);
 }
+
+blockquote {
+    margin-inline: 1.5em;
+    border-left: .25em solid var(--faint);
+    padding-left: .5em;
+}
