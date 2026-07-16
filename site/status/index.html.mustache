@@ -14,12 +14,12 @@
     {{#status.current}}
     <h3 class="currently">currently, i&apos;m</h3>
     <h1>{{text}}</h1>
-    <p class="asof">as of {{date}}</p>
+    <p class="asof">as of <span class="tabnum">{{date}}</span></p>
     {{/status.current}}
     <h3>but previously i&apos;ve been</h3>
     <ul>
       {{#status.old}}
-      <li>{{date}} &ndash; {{text}}</li>
+      <li><span class="tabnum">{{date}}</span> &ndash; {{text}}</li>
       {{/status.old}}
     </ul>
     {{/body}}
