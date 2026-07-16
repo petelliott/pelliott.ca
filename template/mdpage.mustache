@@ -7,6 +7,11 @@
             pelliott.ca
         {{/title}}
     {{/title}}
+    {{$head}}
+    {{#css}}
+    <link rel="stylesheet" href="{{.}}">
+    {{/css}}
+    {{/head}}
     {{$body}}
     {{{body}}}
     {{/body}}
