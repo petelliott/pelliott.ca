@@ -9,6 +9,7 @@
 - [changelog](/changelog)
 - [status](/status)
 - [colophon](/colophon)
+- [interests](/interests)
 
 
 ## [/projects](/projects)
