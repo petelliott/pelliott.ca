@@ -21,11 +21,12 @@
   (define url (string-append "/blog/" (slug path)))
   (call-with-input-file path
     (lambda (port)
-      (define meta (read port))
+      (define meta (acons 'url url (read port)))
       (define post (render-content (get-string-all port) path))
+      (set! meta (acons 'content post meta))
       (GET-static url (content '(text/html)
-                               (blog-post-template (acons 'content post meta))))
-      (acons 'url url meta))))
+                               (blog-post-template meta)))
+      meta)))
 
 (define posts
   (stable-sort
@@ -58,16 +59,18 @@
 
 (add-global-template-parameter 'blog `((posts . ,(list->vector posts))
                                        (tags . ,(list->vector tag-data))
-                                       (top10 . ,(list->vector (topn posts 10)))))
+                                       (top10 . ,(list->vector (topn posts 10)))
+                                       (last-updated . ,(assoc-ref (car posts) 'date))))
 
 
 (define blog-template (mustache-compile "blog.mustache"))
 (GET-static "/blog"
             (content '(text/html)
                      (blog-template `((show-tags . #t)
+                                      (feed . ,"/blog/atom.xml")
                                       (tags . ,(list->vector (map car tags)))
                                       (posts . ,(list->vector posts))))))
-
+;; /blog/tags/*
 (define (make-tag-pages tags posts)
   (for-each
    (lambda (tag)

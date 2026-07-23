@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://pelliott.ca/">
+
+	<title>peter elliott</title>
+	<link href="/blog/atom.xml" rel="self" />
+	<link href="/blog" />
+	<id>urn:uuid:a394b9a4-16dc-47bb-ad6b-81e0f8bae4fe</id>
+	<updated>{{blog.last-updated}}</updated>
+
+    {{#blog.posts}}
+	<entry>
+		<title>{{title}}</title>
+		<link href="{{url}}" />
+		<id>{{id}}</id>
+        <published>{{date}}</published>
+        {{#updated}}<updated>{{.}}</updated>{{/updated}}
+        {{#description}}<summary>{{.}}</summary>{{/description}}
+		<content type="html">
+          {{{content}}}
+		</content>
+		<author>
+			<name>{{author}}</name>
+			<uri>{{author-url}}</uri>
+		</author>
+        {{#tags}}
+        <category term="{{.}}"/>
+        {{/tags}}
+	</entry>
+    {{/blog.posts}}
+
+</feed>

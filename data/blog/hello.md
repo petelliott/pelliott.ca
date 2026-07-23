@@ -2,7 +2,8 @@
  (author . "peter elliott")
  (author-url . "/")
  (date . "2026-07-15")
- (description . "I'm testing out my blogging platform")
+ (id . "urn:uuid:5d2c1087-978c-4f49-8fa1-881551e04859")
+ (description . "thoughts about personal websites, and why i made this one")
  (tags . #(meta personalweb)))
 
 if you're reading this, then i've finally made a personal website. as a

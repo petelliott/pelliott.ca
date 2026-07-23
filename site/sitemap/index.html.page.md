@@ -4,7 +4,7 @@
 ## boring regular stuff
 
 - [/now](/now)
-- [/blog](/blog)
+- [/blog](/blog) ([feed](/blog/atom.xml))
 - [/links](/links)
 - [/sitemap](/sitemap)
 - [/changelog](/changelog)

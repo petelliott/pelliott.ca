@@ -11,6 +11,7 @@
       {{/selected-tag}}
       {{#show-tags}}
       <nav class="alltags underline-hover">
+        {{#feed}}<a href="{{.}}">feed</a>{{/feed}}
         {{>tags-list}}
         <a href="/blog/tags" aria-label="more tags">...</a>
       </nav>
