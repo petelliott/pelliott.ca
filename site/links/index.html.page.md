@@ -9,12 +9,16 @@
 
 ## my friends
 
-pending submissions
+- [jacob reckhard](https://reckhard.ca)
+- [trollslayer](https://trollslayer.bandcamp.com/music)
+
 
 ## blogs i like
 
 - [wingolog](https://wingolog.org)
 - [andrew kelley](https://andrewkelley.me/)
+- [ratfactor](https://ratfactor.com/)
+- [drew devault](https://drewdevault.com/)
 
 ## link aggregators
 
