@@ -1,14 +1,12 @@
 ((title . "now"))
 
-last updated: 2026-07-15
+last updated: 2026-07-27
 
 ## i'm programming
 
-this website, and [schingle](https://github.com/petelliott/schingle) the
-webframework/static-site-generator that powers it. i also just finished writing
-[hexmerge city](https://hexmergecity.reckhard.ca/) with
-[jacob](https://reckhard.ca) for the [raylib 6.x
-gamejam](https://itch.io/jam/raylib-6x-gamejam)
+- this website, and [schingle](https://github.com/petelliott/schingle) the
+  webframework/static-site-generator that powers it.
+- a scriptable/templatable http client cli thing in zig.
 
 ## i'm sportsing
 
@@ -19,4 +17,5 @@ rollerblading as i would like due to injury and weather.
 
 ## i'm reading
 
-[kafka on the shore](https://en.wikipedia.org/wiki/Kafka_on_the_Shore), very slowly.
+- [kafka on the shore](https://en.wikipedia.org/wiki/Kafka_on_the_Shore), very slowly.
+- [category theory for the sciences](https://mitpress.mit.edu/9780262028134/category-theory-for-the-sciences/), with my mom.
