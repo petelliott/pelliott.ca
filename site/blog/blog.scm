@@ -28,11 +28,16 @@
                                (blog-post-template meta)))
       meta)))
 
+(define (hide-unlisted posts)
+  (filter (lambda (p) (not (assoc-ref p 'unlisted)))
+          posts))
+
 (define posts
   (stable-sort
-   (map
-    (lambda (path) (serve-post (in-vicinity blog-dir path)))
-    (scandir blog-dir (lambda (path) (not (string-prefix? "." path)))))
+   (hide-unlisted
+    (map
+     (lambda (path) (serve-post (in-vicinity blog-dir path)))
+     (scandir blog-dir (lambda (path) (not (string-prefix? "." path))))))
    (lambda (a b)
      (string>? (assoc-ref a 'date)
                (assoc-ref b 'date)))))
