@@ -3,6 +3,8 @@
 
 ## me but elswhere
 
+i try to be @petelliott if i can.
+
 - [github](https://github.com/petelliott)
 - [codeberg](https://codeberg.org/petelliott)
 - [lichess](https://lichess.org/@/petelliott)
@@ -11,7 +13,6 @@
 
 - [jacob reckhard](https://reckhard.ca)
 - [trollslayer](https://trollslayer.bandcamp.com/music)
-
 
 ## blogs i like
 
@@ -29,3 +30,9 @@
 - [32bit cafe](https://32bit.cafe)
 - [slashpages](https://slashpages.net)
 - [nownownow](https://nownownow.com/about)
+- [neocities](https://neocities.org/)
+
+## free culture
+
+- [lichess](https://lichess.org)
+- [standard ebooks](https://standardebooks.org/)
