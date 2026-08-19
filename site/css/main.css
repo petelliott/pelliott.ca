@@ -81,7 +81,7 @@ main {
     background-color: var(--accent-bg);
     color: var(--bg);
     text-align: center;
-    /*padding: 1rem;*/
+    margin-top: 1rem;
 }
 
 .main-footer nav {
