@@ -1,5 +1,5 @@
 ((title . "projects")
- (css . #("css/flatlists.css")))
+ (css . #("/css/flatlists.css")))
 
 this page is very incomplete right now.
 
