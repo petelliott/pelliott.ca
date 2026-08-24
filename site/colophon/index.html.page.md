@@ -19,6 +19,7 @@ reverse proxy to the rarely-needed dynamic backend. this site is running on an
 [azure](https://azure.microsoft.com/) virtual machine. it's probably a bit
 over-provisioned, but i get free azure credits from work.
 
+
 ### virtual machine specs
 
 - **region**: canadacentral (toronto 🇨🇦, not exactly "central")
@@ -30,3 +31,8 @@ over-provisioned, but i get free azure credits from work.
 
 all content and code is written by hand by peter elliott, however generative AI
 is consulted on occasion. purely on technical matters, never on content.
+
+## Sustainability
+
+<div id="wcb" class="carbonbadge" style="text-align:left"></div>
+<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
