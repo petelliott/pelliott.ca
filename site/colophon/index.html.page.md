@@ -10,7 +10,11 @@ this website was launched in 2026. you can read the source code
 this site was built using [schingle](https://github.com/petelliott/schingle), a
 hybrid web framework and static site generator i wrote in
 [guile](https://www.gnu.org/software/guile/). markdown is rendered by
-[pandoc](https://pandoc.org/).
+[pandoc](https://pandoc.org/). mail is sent by
+[postfix](https://www.postfix.org/) through [azure communication
+services](https://azure.microsoft.com/en-us/products/communication-services). (did
+you know azure blocks all outgoing ipv4 traffic on port 25, but doesn't support
+reverse DNS for ipv6? so no direct mail for me)
 
 ## hosting
 
