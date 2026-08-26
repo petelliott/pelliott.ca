@@ -1,0 +1,108 @@
+{{<page}}
+{{$head}}
+<style>
+  #contact {
+      margin-inline: auto;
+      width: 100%;
+  }
+  #contact > label,
+  #contact > input,
+  #contact > textarea {
+      display: block;
+      margin-block: 0.5rem;
+      width: 100%;
+  }
+  #contact > textarea {
+      resize: vertical;
+      min-height: 10lh;
+      field-sizing: content;
+  }
+  #contact .nameemail {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+  }
+  #contact .nameemail > label {
+      display:flex;
+      align-items: center;
+      flex:1;
+  }
+  #contact .nameemail > label > input {
+      flex:1;
+  }
+  #contact > #subject {
+      margin-bottom: 0;
+      border-bottom-width: 1px;
+      border-radius: 3px 3px 0 0;
+  }
+  #contact > #body {
+      margin-top: 0;
+      border-top-width: 1px;
+      border-radius: 0 0 3px 3px;
+  }
+</style>
+{{/head}}
+{{$title}}contact [pelliott.ca]{{/title}}
+{{$body}}
+<h1>contact me</h1>
+<p>
+  if you send me high-quality comments, guest-post submissions, or
+  letters-to-the-editor, i may publish them on my blog or elswhere. bug reports,
+  corrections, questions, and low-quality comments are also appreciated. feel
+  free to contact me about anything else too.
+</p>
+<h2>send me an email</h2>
+
+<p>
+  <a href="mailto:info@pelliott.ca">info@pelliott.ca</a>
+</p>
+
+<h2>or, fill out this form:</h2>
+<form id="contact" action="/forms/contact" method="post">
+  <div class="nameemail">
+      <label>
+        <b>name</b>
+      <input id="name" name="name" type="text" placeholder="mike rotch" size="15"></input>
+      </label>
+      <label>
+        <b>email</b>
+        <input id="email" name="email" type="email" placeholder="mike@rotch.biz" size="15"></input>
+      </label>
+      <label>
+        <b>website</b>
+        <input id="website" name="website" type="url" placeholder="https://rotch.biz" size="15"></input>
+      </label>
+  </div>
+  <input required id="subject" name="subject" type="text" aria-label="subject line" placeholder="re: your stupid blog post"></input>
+  <textarea required id="body" name="body" aria-label="message body"
+  placeholder="i did not like your blog post. i thought it was stupid.
+
+cheers,
+- mike" rows="10"></textarea>
+  <button type="submit">submit</button>
+</form>
+<script>
+  // fill in the subject automatically, so we can link from blog posts
+  document.getElementById("subject").value = decodeURIComponent(window.location.hash.substring(1));
+</script>
+<script>
+  // save and restore the commenter's info
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const website = document.getElementById("website");
+
+  // load saved values
+  const contactInfo = localStorage.getItem("contact-info-name");
+  name.value = localStorage.getItem("contact-info-name") ?? "";
+  email.value = localStorage.getItem("contact-info-email") ?? "";
+  website.value = localStorage.getItem("contact-info-website") ?? "";
+
+  document.getElementById("contact").addEventListener("submit", (event) => {
+      // no async here, the page will reload before it finishes.
+      localStorage.setItem("contact-info-name", name.value);
+      localStorage.setItem("contact-info-email", email.value);
+      localStorage.setItem("contact-info-website", website.value);
+  });
+</script>
+{{/body}}
+{{/page}}

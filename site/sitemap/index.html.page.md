@@ -11,6 +11,7 @@
 - [/status](/status)
 - [/colophon](/colophon)
 - [/interests](/interests)
+- [/contact](/contact)
 
 ## weirder stuff
 

@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+*:focus-visible {
+    outline: 2px solid currentColor;
+}
+
 body {
     color: var(--fg);
     background-color: var(--bg);
@@ -92,4 +96,73 @@ blockquote {
 
 .tabnum {
     font-variant-numeric: tabular-nums;
+}
+
+input,
+textarea,
+label:has(input) {
+    background-color: var(--input-bg);
+    border: 2px solid var(--accent);
+    border-radius: 3px;
+    padding: 0.5rem;
+    font-size: 1em;
+    font-family: 'Crimson Pro';
+}
+
+input:focus-visible,
+textarea:focus-visible,
+label:has(input):focus-within {
+    outline: 2px solid var(--accent);
+    border-radius: 1px;
+}
+
+input:user-invalid,
+textarea:user-invalid,
+label:has(input:user-invalid) {
+  border-color: var(--invalid);
+}
+
+input:focus-visible:user-invalid,
+textarea:focus-visible:user-invalid,
+label:has(input:focus-visible:user-invalid) {
+  outline-color: var(--invalid);
+}
+
+label:has(input) {
+    color: var(--accent);
+}
+
+label:has(input:user-invalid) {
+    color: var(--invalid);
+}
+
+label > input {
+    border: none !important;
+    padding: 0 !important;
+    margin-left: 0.75rem;
+}
+
+label > input:focus-visible {
+    outline: none;
+}
+
+button {
+    background-color: var(--accent-bg);
+    color: var(--bg);
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem;
+    font-size: 1em;
+    font-family: 'Crimson Pro';
+    cursor: pointer;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--accent-bg);
+    outline-offset: 1px;
+}
+
+button:hover {
+    outline: 2px solid var(--accent-bg);
+    border-radius: 1px;
 }
