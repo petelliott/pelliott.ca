@@ -31,14 +31,26 @@
       flex:1;
   }
   #contact > #subject {
-      margin-bottom: 0;
-      border-bottom-width: 1px;
+      margin-bottom: -1px;
       border-radius: 3px 3px 0 0;
+      position: relative;
+      z-index: 0;
+  }
+  #contact > #subject:focus-visible {
+      border-bottom-width: 2px !important;
+      border-radius: 3px !important;
+      z-index: 1;
   }
   #contact > #body {
-      margin-top: 0;
-      border-top-width: 1px;
+      margin-top: -1px;
       border-radius: 0 0 3px 3px;
+      position: relative;
+      z-index: 0;
+  }
+  #contact > #body:focus-visible {
+      border-bottom-width: 2px !important;
+      border-radius: 3px !important;
+      z-index: 1;
   }
 </style>
 {{/head}}
