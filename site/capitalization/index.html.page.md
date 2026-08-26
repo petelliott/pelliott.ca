@@ -50,7 +50,7 @@ incompatible title casing styles:
 > - minor words: Short (i.e., three letters or fewer) conjunctions, short
 >   prepositions, and all articles are considered minor words.
 
-[associated press (wikipedia linke because paywall):](https://en.wikipedia.org/wiki/Capitalization_in_English)
+[associated press (wikipedia link because paywall):](https://en.wikipedia.org/wiki/Capitalization_in_English)
 
 > - Capitalize words with three or more letters.
 > - Capitalize nouns, pronouns, adjectives, verbs, adverbs, and subordinating conjunctions.
