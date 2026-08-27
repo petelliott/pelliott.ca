@@ -36,3 +36,4 @@ i try to be @petelliott if i can.
 
 - [lichess](https://lichess.org)
 - [standard ebooks](https://standardebooks.org/)
+- [sheldon brown](https://www.sheldonbrown.com/)
