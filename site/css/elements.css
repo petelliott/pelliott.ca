@@ -175,5 +175,5 @@ figure {
 
 
 img {
-    max-width:30rem;
+    max-width: calc(min(30rem, 100%));
 }
