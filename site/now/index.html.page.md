@@ -1,6 +1,6 @@
 ((title . "now"))
 
-last updated: 2026-08-25
+last updated: 2026-09-02
 
 ## i'm programming
 
@@ -21,7 +21,7 @@ last updated: 2026-08-25
 
 ## i'm reading
 
-- [a clockwork orange](https://en.wikipedia.org/wiki/A_Clockwork_Orange_(novel))
+- [Ancient Wisdom, Modern World: Ethics for the new Millennium ](https://en.wikipedia.org/wiki/Ancient_Wisdom,_Modern_World)
 - [category theory for the sciences](https://mitpress.mit.edu/9780262028134/category-theory-for-the-sciences/), with my mom.
 
 ## i'm listenting to
