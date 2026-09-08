@@ -171,9 +171,11 @@ figure {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-inline: 0;
 }
 
 
 img {
+    align-items: center;
     max-width: calc(min(30rem, 100%));
 }

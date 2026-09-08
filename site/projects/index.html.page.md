@@ -21,4 +21,8 @@ coming soon
 
 ## design
 
-coming soon
+- [my monogram](/projects/monogram) (
+<svg class="monogram" viewBox="0 0 4.466 5" aria-label="Peter Elliott's monogram" style="vertical-align: middle;">
+  <use href="#monogram" />
+</svg>
+)
